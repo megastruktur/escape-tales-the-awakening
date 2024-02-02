@@ -1,38 +1,22 @@
-# create-svelte
+# This is a Work In Progress!
+The actual application is going to be hosted later. This is a Work in Progress.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+# Escape Tales: The Awakening (Клаустрофобия: Пробуждение)
 
-## Creating a project
+Eng:
+The application allows to track Event cards without jumping through the book. You can navigate through the cards using search or a sidebar.
 
-If you're seeing this, you've probably already done this step. Congrats!
+Rus:
+Приложение позволяет следить за Картами Событий и прогрессом по сюжету. Переходить можно как используя поиск, так и пользуясь боковым меню либо же ссылками на самой карточке, если таковые имеются.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+<p align="center">
+  <img src="screenshots/story1.jpg" />
+</p>
 
-## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+# Languages supported
+- Russian (Русский)
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+# TODO
+- Languages support
