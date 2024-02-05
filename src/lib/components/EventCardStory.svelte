@@ -3,8 +3,6 @@
 	import { page } from "$app/stores";
 	import { eventCardStoryStore } from "$lib/stores";
 
-  console.log($eventCardStoryStore);
-
   let currentCardId: string
   let isCurrentCardIdInStory: boolean
 
