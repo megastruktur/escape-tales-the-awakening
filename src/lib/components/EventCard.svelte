@@ -1,6 +1,20 @@
 <script lang="ts">
 
+	/**
+	 * PurgeCSS
+	 * text-warning-400
+	 * text-error-400
+	 * text-tertiary-400
+	*/
+
   export let eventCard: AwakenEventCard
+
+
+	const safelistTailwindcss = [
+		"text-warning-400",
+		"text-error-400",
+		"text-tertiary-400",
+	]
 
 </script>
 <div class="card max-w-96 mx-auto">

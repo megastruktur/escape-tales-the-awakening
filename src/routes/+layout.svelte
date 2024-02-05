@@ -1,16 +1,8 @@
 <script lang="ts">
 
-	/**
-	 * PurgeCSS
-	 * text-warning-400
-	 * text-error-400
-	 * text-tertiary-400
-	*/
-
-	import { awakenEventCardsStore, pageTitleStore } from '$lib/stores';
+	import { pageTitleStore } from '$lib/stores';
 	import { onDestroy } from 'svelte';
 	import '../app.postcss';
-	import awakenEventCardsJson from "$lib/assets/awakenEventCards.json?raw"
 
 	let pageTitle = "Awaken"
 	// Floating UI for Popups
@@ -37,9 +29,11 @@
 		width: "w-40",
 	};
 
-	awakenEventCardsStore.set(JSON.parse(awakenEventCardsJson))
-
 </script>
+
+<svelte:head>
+	<title>Клаустрофобия: Пробуждение</title>
+</svelte:head>
 
 <Modal />
 <Drawer>

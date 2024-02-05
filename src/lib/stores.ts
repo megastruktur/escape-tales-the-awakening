@@ -4,6 +4,4 @@ import { writable } from "svelte/store";
 
 export const pageTitleStore = writable<string>("");
 
-export const awakenEventCardsStore = writable<AwakenEventCard[]>([]);
-
 export const eventCardStoryStore: Writable<string[]> = localStorageStore('EventCardStory', []);

@@ -3,24 +3,23 @@
 	import EventCard from "$lib/components/EventCard.svelte";
 	import EventCardStory from "$lib/components/EventCardStory.svelte";
 	import EventGoto from "$lib/components/EventGoto.svelte";
-	import { awakenEventCardsStore, eventCardStoryStore, pageTitleStore } from "$lib/stores";
+	import { eventCardStoryStore, pageTitleStore } from "$lib/stores";
+
+  export let data
 
   let eventCardId: string
-  let awakenEventCard: AwakenEventCard | undefined
 
   pageTitleStore.set("Карты событий")
 
-  function addCardToStory(cardId: string) {
-    if ($eventCardStoryStore.find(cid => cid === cardId) === undefined) {
-      eventCardStoryStore.set([...$eventCardStoryStore, cardId])
+  function addCardToStory() {
+    if (data.card !== undefined && $eventCardStoryStore.find(cid => cid === data.card?.id) === undefined) {
+      eventCardStoryStore.set([...$eventCardStoryStore, data.card?.id])
     }
   }
 
   $: {
     eventCardId = $page.params.eventId
-    awakenEventCard =
-      $awakenEventCardsStore.find((card: AwakenEventCard) => card.id === eventCardId)
-      addCardToStory(eventCardId)
+    addCardToStory()
   }
   
 </script>
@@ -34,8 +33,8 @@
   <EventGoto />
   
   <div class="">
-    {#if awakenEventCard !== undefined}
-      <EventCard eventCard={awakenEventCard} />
+    {#if data.card !== undefined}
+      <EventCard eventCard={data.card} />
     {/if}
   </div>
 </div>
