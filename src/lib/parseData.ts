@@ -5,9 +5,7 @@ export async function dataParser() {
   // Read file dataTxt
   // Get blocks separated by ---
   const blocks = dataTxt.split("---");
-
-  // console.log(blocks[0])
-
+  
   // Parse each block into JSON. First line is "id", each line bigining with "• " is "option", everything else is a "description".
   const cards: AwakenEventCard[] = blocks.map((block) => {
     const lines = block.split("\n");
