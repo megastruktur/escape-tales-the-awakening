@@ -2,15 +2,16 @@
 	import { goto } from "$app/navigation";
 
   let gotoCardId: string
+  let gotoUrl: string
 
-  function gotoCard() {
+  function onChangeNumber() {
     if (gotoCardId !== undefined) {
       
       // if gotoCardId is less than 3 characters add 0 before it for each missing one
       while (gotoCardId.length < 3) {
         gotoCardId = `0${gotoCardId}`
       }
-      goto(`/event/P${gotoCardId}`)
+      gotoUrl = `/event/P${gotoCardId}`
     }
   }
 </script>
@@ -19,8 +20,10 @@
   <input
     class="input w-full mb-3"
     placeholder="Номер карточки"
+    on:blur={onChangeNumber}
     bind:value={gotoCardId} />
-  <button
+  <a
     class="btn variant-outline-primary w-full"
-    on:click={gotoCard}>Перейти</button>
+    href={gotoUrl}
+    >Перейти</a>
 </form>
